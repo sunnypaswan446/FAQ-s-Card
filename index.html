@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .card {
+      display: flex;
+      background-color: white;
+      width: 55%;
+      height: 400px;
+      border-radius: 25px;
+      /* overflow: auto; */
+    }
+
+    .card_image {
+      width: 50%;
+      position: relative;
+    }
+
+    .logo_background {
+      width: 100%;
+      position: absolute;
+      bottom: 3%;
+      right: 15%;
+
+
+    }
+
+    .logo {
+      position: absolute;
+      width: 100%;
+      bottom: 21%;
+      right: 15%;
+    }
+
+    .logo_box {
+      position: absolute;
+      bottom: 31%;
+      right: 80%;
+      overflow: clip;
+      width: 46%;
+    }
+
+    .card_text {
+      margin: 25px;
+      width: 50%;
+
+    }
+
+    .card_text_body {
+      display: flex;
+      flex-direction: column;
+      padding: 5px 0px 0px 0px;
+      height: 290px;
+      justify-content: space-evenly;
+    }
+
+    h1 {
+      font-size: 35px;
+    }
+
+    .ques_box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.411);
+      padding-bottom: 5px;
+    }
+
+    .question {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 5px;
+      cursor: pointer;
+      font-size: .9rem;
+
+    }
+
+    .answer {
+      font-weight: 400;
+      opacity: .7;
+      padding-bottom: 5px;
+      display: none;
+      transition: ease 1s;
+    }
+
+    .active .answer {
+      display: block;
+    }
+
+    @media screen and (max-width:600px) {      
+      .card_image {
+        width: 59%;
+        height: 18%;
+        position: relative;
+      }
+
+      .logo_box {
+        bottom: 61%;
+        right: 37%;
+        width: 40%;
+      }
+
+      .logo_background {
+
+        bottom: 4%;
+        right: -29%;
+      }
+
+      .logo {
+        bottom: 37%;
+        right: -29%;
+      }
+
+      .card {
+        flex-direction: column;
+        width: 90%;
+        height: 70%;
+      }
+
+      .card_text {
+        width: 85%;
+        ;
+      }
+
+      .card_text h1 {
+        text-align: center;
+      }
+
+      .card_text_body {
+        height: 300px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+  <div class="card">
+    <div class="card_image">
+      <img src="./images/bg-pattern-desktop.svg" class="logo_background" alt="">
+      <img src="./images/illustration-woman-online-desktop.svg" alt="" class="logo">
+      <img src="./images/illustration-box-desktop.svg" class="logo_box" alt="">
+    </div>
+
+    <div class="card_text">
+      <h1>FAQ</h1>
+      <div class="card_text_body">
+        <div class="ques_box">
+          <div class="question">How many team members can I invite?
+            <img src="./images/icon-arrow-down.svg" alt="">
+          </div>
+          <div class="answer answer_visibility">You can invite up to 2 additional users on the Free plan. There is no
+            limit on team
+            members for the Premium plan.</div>
+        </div>
+
+        <div class="ques_box">
+          <div class="question">What is the maximum file upload size?
+            <img src="./images/icon-arrow-down.svg" alt="">
+          </div>
+          <div class="answer answer_visibility"> No more than 2GB. All files in your account must fit your allotted
+            storage space.
+          </div>
+        </div>
+
+        <div class="ques_box">
+          <div class="question">How do I reset my password?
+            <img src="./images/icon-arrow-down.svg" alt="">
+          </div>
+          <div class="answer answer_visibility">Click “Forgot password” from the login page or “Change password” from
+            your profile page. A
+            reset link will be emailed to you.</div>
+        </div>
+
+        <div class="ques_box">
+          <div class="question">Can I cancel my subscription?
+            <img src="./images/icon-arrow-down.svg" alt="">
+          </div>
+          <div class="answer answer_visibility">Yes! Send us a message and we’ll process your request no questions
+            asked.</div>
+        </div>
+
+        <div class="ques_box">
+          <div class="question">Do you provide additional support?
+            <img src="./images/icon-arrow-down.svg" alt="">
+          </div>
+          <div class="answer answer_visibility"> Chat and email support is available 24/7. Phone lines are open during
+            normal business
+            hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let questions = document.querySelectorAll('.question');
+
+
+    // questions.forEach()
+
+
+    // questions.forEach(function(question){
+    //   question.addEventListener("click",function(){
+    //     answer.classList.toggle("answer_visibility")
+    //   })
+
+    // })
+    // function show(){
+    //   answer.classList.toggle('answer_visibility')
+    // }
+
+
+
+    questions.forEach((question) =>
+      question.addEventListener('click', () => {
+        if (question.parentNode.classList.contains('active')) {
+          question.parentNode.classList.toggle('active');
+        }
+        else {
+          questions.forEach((question) => question.parentNode.classList.remove('active'));
+          question.parentNode.classList.add('active');
+        }
+
+      }));
+
+
+
+  </script>
+
+</body>
+
+
+</html>
