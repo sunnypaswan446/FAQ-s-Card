@@ -227,23 +227,6 @@
 
   <script>
     let questions = document.querySelectorAll('.question');
-
-
-    // questions.forEach()
-
-
-    // questions.forEach(function(question){
-    //   question.addEventListener("click",function(){
-    //     answer.classList.toggle("answer_visibility")
-    //   })
-
-    // })
-    // function show(){
-    //   answer.classList.toggle('answer_visibility')
-    // }
-
-
-
     questions.forEach((question) =>
       question.addEventListener('click', () => {
         if (question.parentNode.classList.contains('active')) {
